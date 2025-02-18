@@ -1,0 +1,129 @@
+@import url('../../App.css');
+:root {
+    --primary-color:#3bb77e
+}
+.home__container {
+    padding: 10px 100px;
+    
+}
+
+
+.popular__container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+.popular__container-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.popular__container-heading > h2 {
+    margin: 0;
+    font-size: 4rem;
+    opacity: 0.6;
+    font-family: var(--font-family);
+    font-weight: bold;
+}
+.popular__container-heading__cate {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+}
+.popular__container-heading__cate > li {
+    font-family: var(--font-family);
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    opacity: 0.6;
+    transition: transform ease-in-out 0.4s;
+}
+.popular__container-heading__cate > li:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+.popular__container-heading__cate > li.selected {
+    color: var(--primary-color);
+}
+.popular__container-content {
+    width: 100%;
+    
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.daily-sale__container {
+    margin-top: 150px;
+    width: 100%;
+    height: max(40vh, 800px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.daily-sale__heading {
+    width: 100%;
+    height: min(5%,200px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.daily-sale__heading > h2 {
+    width: 40%;
+    font-size: 3.6rem;
+    opacity: 0.6;
+    
+}
+.daily-sale__heading-right {
+    width: 60%;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 10px;
+}
+.daily-sale__heading-right > div {
+    width: min(120px, 33%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.daily-sale__heading-right > div > button {
+    font-family: var(--font-family);
+    font-weight: bold;
+    font-size: min(2rem, 1vw);
+    border: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: transform 0.3s ease-in-out;
+}
+.daily-sale__heading-right > div > button:hover {
+    color: #ffc107;
+    cursor: pointer;
+    transform: translateY(-6px);
+}
+.daily-sale__content {
+    height: max(780px, 100%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+

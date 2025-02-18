@@ -1,0 +1,94 @@
+.slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.slider-item {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: max(80vw,1800px);
+    height: max(60vh, 600px);
+}
+.slider-item > img {
+    width: 100% !important;
+    height: 100% !important;
+   
+    border-radius: 20px;
+}
+.slider-item > h2 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 40%;
+    font-family: "Quicksand", serif;
+    font-weight: bold;
+    font-size:clamp(40px, 6rem, 8rem);
+    opacity: 0.6;
+}
+.slider-item > p {
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    width: 15%;
+    font-family: "Quicksand", serif;
+    font-size: 3rem;
+    opacity: 0.4;
+}
+
+.slick-arrow.slick-prev {
+    position: absolute;
+    left: 4%;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background-color: #f2f3f4 !important;
+    z-index: 10;
+}
+.slick-arrow.slick-next {
+    position: absolute;
+    right: 4%;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background-color: #f2f3f4 !important;
+    z-index: 10;
+
+}
+.slick-arrow.slick-prev:before{
+    content: "\f104" !important;
+    font-family: FontAweSome !important;
+    color: #000 !important;
+}
+.slick-arrow.slick-next:before{
+    content: "\f105" !important;
+    font-family: FontAweSome !important;
+    color: #000 !important;
+}
+.slick-arrow.slick-prev:hover,
+.slick-arrow.slick-next:hover
+ {
+    background-color: var(--primary-color) !important;
+}
+.slick-dots {
+    position: absolute;
+    bottom: 40px !important;
+}
+.slick-dots li {
+    background-color: transparent !important;
+    
+}
+
+.slick-dots li button:before {
+    font-size: 1.4rem !important;
+}
+.slick-dots li button:hover {
+    color: var(--primary-color);
+}
+.slick-dots li.slick-active button:before {
+    color: var(--primary-color) !important;
+}

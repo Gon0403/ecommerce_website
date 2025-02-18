@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root {
+    --primary-color:#3bb77e;
+    --font-family: "Quicksand", serif; 
+}
+html {
+    font-size: 62.5%; /* 62.5% của 16px = 10px */
+    scroll-behavior: smooth;
+
+  }
+  
