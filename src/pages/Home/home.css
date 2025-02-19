@@ -4,7 +4,8 @@
 }
 .home__container {
     padding: 10px 100px;
-    
+    width: 1900px;
+    height: 2000px;
 }
 
 
@@ -15,6 +16,7 @@
     align-items: center;
     width: 100%;
     flex-direction: column;
+    margin-bottom: 100px;
 }
 .popular__container-heading {
     display: flex;
@@ -54,7 +56,10 @@
 }
 .popular__container-content {
     width: 100%;
-    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 @keyframes appear {
     from {
@@ -68,7 +73,7 @@
 }
 
 .daily-sale__container {
-    margin-top: 150px;
+    margin-top: 50px;
     width: 100%;
     height: max(40vh, 800px);
     display: flex;
@@ -109,7 +114,7 @@
     font-size: min(2rem, 1vw);
     border: none;
     background-color: transparent;
-    color: var(--primary-color);
+    
     transition: transform 0.3s ease-in-out;
 }
 .daily-sale__heading-right > div > button:hover {
@@ -117,13 +122,38 @@
     cursor: pointer;
     transform: translateY(-6px);
 }
+ .active {
+    color: var(--primary-color);
+}
 .daily-sale__content {
-    height: max(780px, 100%);
+    height: max(1000px, 50%);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
+    
 }
+.daily-sale__content-slider {
+    width: 100%;
+    height: 100%;
+    
+}
+.daily-sale__content__item {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.daily-sale__content-slider .slick-arrow.slick-prev {
+    top: 30%;
+        left: -2%;
 
+}
+.daily-sale__content-slider .slick-arrow.slick-next {
+    right: -2%;
+    top: 30%;
+} 
+.daily-sale__content .slick-list {
+    height: 100% !important;
+}

@@ -101,16 +101,10 @@ const PopularProduct = ({ popularProducts = [], isDailyList }) => {
 
 
   return (
-
-
-    
-
     <div className={popularProducts.length === 1 ? "popularProduct__container-1item" : "popularProduct__container"} >
-
       {popularProducts.map((product, index) => {
 
         if (index < 10) {
-
           return (
             <div className='popularProduct__item' key={index}>
               <div className='product__img'>
@@ -184,11 +178,9 @@ const PopularProduct = ({ popularProducts = [], isDailyList }) => {
               </div>
 
             </div>
-
           )
         }
       })}
-
       {/* //quickView */}
       <div style={{ display: showQuickView ? "" : "none" }} ref={quickViewPopupRef} className={`quickView__popup }`}>
         <div className='quickView__popup__img'>

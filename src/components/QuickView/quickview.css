@@ -1,0 +1,142 @@
+@import url('../../App.css');
+
+.quickView__popup {
+    position: fixed !important  ;
+    width: max(30vw,1000px);
+    height: max(20vh, 600px);
+    background-color: #fff;
+    border: var(--primary-color);
+    border-radius: 8px;
+    top: 20% !important;
+    left: 25% !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: quick_view_open 0.4s linear;
+    animation: quick_view_close 0.4s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    z-index: 99999;
+}
+
+.quickView__popup__img {
+    display: flex;
+    width: max(60%, 600px);
+    height: max(20%,600px);
+    justify-content: center;
+    align-items: center;
+    
+}
+.quickView__popup__img > div > img {
+    width: max(100px, 80%);
+    height: max(450px, 10%);
+}
+.quickView__popup__details {
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    width: max(400px, 40%);
+}
+.quickView__popup__details-tag {
+    width: max(4vw, 60px);
+    height: max(6vh, 30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.quickView__popup__details-name {
+    font-size: 4.6rem;
+    width: 100%;
+    font-weight: bold;
+}
+.quickView__popup__details-name:hover a {
+    color: #ffc107;
+    cursor: pointer;
+}
+.quickView__popup__details-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.quickView__popup__details-price > h1 {
+    color: var(--primary-color);
+    font-size: max(4rem, 34px);
+    font-weight: bold;
+}
+.quickView__popup__details-price > h3 {
+    color: #b6b6b6;
+    font-size: max(2.6rem, 20px);
+    text-decoration: line-through;
+}
+.quickView__popup__details-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.quickView__popup__details-quantity > div > input {
+    width: max(3vw, 50px);
+    height: max(4vh, 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    color: var(--primary-color);
+    border: 4px solid var(--primary-color);
+    outline: none;
+    border-radius: 8px;
+    font-size: min(2.6rem, 40px);
+}
+.quickView__popup__details-rate {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  
+}
+.quickView__popup__details-rate > .ant-rate {
+    width: max(6vw, 50px);
+}
+.quickView__popup__details-rate > .ant-rate > .ant-rate-star {
+    font-size: min(2rem, 30px) !important;
+}
+.quickView__popup__details-rate > p {
+    font-size: min(1.2rem,30px);
+    opacity: 0.6;
+}
+.quickView__popup__details-quantity > button {
+    width: min(8vw, 200px);
+    height: max(4vh, 50px);
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-size: min(2.2rem, 30px );
+    font-weight: bold;
+}
+.quickView__popup__details-quantity > button:hover {
+    background-color: #ffc107;
+    cursor: pointer;
+}
+.quickView__turnoff {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    
+}
+
+.quickView__turnoff > button {
+    width: min(50px, 2vw);
+    height: min(50px, 3vh);
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+}
+.quickView__turnoff > button:hover {
+    cursor: pointer;
+    color: #ffc107;
+}
