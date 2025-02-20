@@ -1,159 +1,222 @@
-@import url('../../App.css');
+@import url("../../App.css");
 :root {
-    --primary-color:#3bb77e
+  --primary-color: #3bb77e;
 }
 .home__container {
-    padding: 10px 100px;
-    width: 1900px;
-    height: 2000px;
+  padding: 10px 100px;
+  width: 1900px;
+  height: 2000px;
 }
-
 
 .popular__container {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
-    margin-bottom: 100px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 100px;
 }
 .popular__container-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .popular__container-heading > h2 {
-    margin: 0;
-    font-size: 4rem;
-    opacity: 0.6;
-    font-family: var(--font-family);
-    font-weight: bold;
+  margin: 0;
+  font-size: 4rem;
+  opacity: 0.6;
+  font-family: var(--font-family);
+  font-weight: bold;
 }
 .popular__container-heading__cate {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  list-style-type: none;
 }
 .popular__container-heading__cate > li {
-    font-family: var(--font-family);
-    margin: 0;
-    font-size: 1.6rem;
-    font-weight: bold;
-    opacity: 0.6;
-    transition: transform ease-in-out 0.4s;
+  font-family: var(--font-family);
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  opacity: 0.6;
+  transition: transform ease-in-out 0.4s;
 }
 .popular__container-heading__cate > li:hover {
-    cursor: pointer;
-    color: var(--primary-color);
-    transform: translateY(-5px);
+  cursor: pointer;
+  color: var(--primary-color);
+  transform: translateY(-5px);
 }
 .popular__container-heading__cate > li.selected {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 .popular__container-content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 @keyframes appear {
-    from {
-        opacity: 0;
-        scale: 0.5;
-    }
-    to {
-        opacity: 1;
-        scale: 1;
-    }
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 .daily-sale__container {
-    margin-top: 50px;
-    width: 100%;
-    height: max(40vh, 800px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+  height: max(40vh, 600px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .daily-sale__heading {
-    width: 100%;
-    height: min(5%,200px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  height: min(5%, 200px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .daily-sale__heading > h2 {
-    width: 40%;
-    font-size: 3.6rem;
-    opacity: 0.6;
-    
+  width: 40%;
+  font-size: 4rem;
+  opacity: 0.6;
 }
 .daily-sale__heading-right {
-    width: 60%;
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    gap: 10px;
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
 }
 .daily-sale__heading-right > div {
-    width: min(120px, 33%);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: min(120px, 33%);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .daily-sale__heading-right > div > button {
-    font-family: var(--font-family);
-    font-weight: bold;
-    font-size: min(2rem, 1vw);
-    border: none;
-    background-color: transparent;
-    
-    transition: transform 0.3s ease-in-out;
+  font-family: var(--font-family);
+  font-weight: bold;
+  font-size: min(2rem, 1vw);
+  border: none;
+  background-color: transparent;
+
+  transition: transform 0.3s ease-in-out;
 }
 .daily-sale__heading-right > div > button:hover {
-    color: #ffc107;
-    cursor: pointer;
-    transform: translateY(-6px);
+  color: #ffc107;
+  cursor: pointer;
+  transform: translateY(-6px);
 }
- .active {
-    color: var(--primary-color);
+.active {
+  color: var(--primary-color);
 }
 .daily-sale__content {
-    height: max(1000px, 50%);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    
+  height: max(1000px, 50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 .daily-sale__content-slider {
-    width: 100%;
-    height: 100%;
-    
+  width: 100%;
+  height: 100%;
 }
 .daily-sale__content__item {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 .daily-sale__content-slider .slick-arrow.slick-prev {
-    top: 30%;
-        left: -2%;
-
+  top: 30%;
+  left: -2%;
 }
 .daily-sale__content-slider .slick-arrow.slick-next {
-    right: -2%;
-    top: 30%;
-} 
+  right: -2%;
+  top: 30%;
+}
 .daily-sale__content .slick-list {
-    height: 100% !important;
+  height: 100% !important;
+}
+
+.dealofDay {
+  width: max(100%, 400px);
+  height: min(1000px, 40vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dealofDay__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 50px 0;
+}
+.dealofDay__heading > h2 {
+  font-family: var(--font-family);
+  font-size: 4rem;
+  opacity: 0.6;
+}
+.dealofDay__heading > a {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  opacity: 0.6;
+  color: #333;
+}
+.dealofDay__content {
+  width: 100%;
+  height: min(600px, 80vh);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.topProduct {
+  width: max(100%, 400px);
+  height: min(600px, 40vh);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 100px;
+}
+.topProduct__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.topProduct__col > h2 {
+  font-weight: bold;
+  font-size: 2.6rem;
+  font-family: var(--font-family);
+  opacity: 0.8;
+}
+.topProduct__col > hr {
+  margin: 30px 0;
+}
+.topProduct__col::after {
+  content: "             ";
+  width: max(30%, 50px);
+  height: 2px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 13.5%;
 }

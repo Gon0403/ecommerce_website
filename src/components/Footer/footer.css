@@ -1,0 +1,105 @@
+@import url("../../App.css");
+.footer__container {
+    width: max(100%,30vw);
+    height: min(800px, 80vh);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family);
+}
+
+.footer__container__top {
+    width: 100%;
+    height: max(20%,200px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.footer__container__top-item {
+    width: 18%;
+    height: 60%;
+    border-radius: 8px;
+    display: flex;
+    background-color: #f4f6fa;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 16px;
+}
+.footer__container__top-item:hover > img {
+    transform: translateY(-5px);
+}
+.footer__container__top-item > img {
+    width: 30%;
+    height: 70%;
+    transition: transform 0.3s ease-in-out;
+
+}
+.footer__container__top-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer__container__top-item-info > h4 {
+    font-size: 1.6rem;
+    color: #242424;
+    font-weight: 600;
+}
+.footer__container__top-item-info > p {
+    font-size: 1.4rem;
+    opacity: 0.6;
+}
+.footer__container__middle {
+    width: 100%;
+    height: max(500px, 20vh);
+    display: flex;
+    justify-content: space-around;
+}
+.footer__middle-col {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 70%;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    gap: 20px;
+    color: #253d4e;
+}
+.footer__middle-col > div {
+    display: flex;
+
+}
+.footer__middle-col > h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.footer__middle-col > a {
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+    color: #333;
+}
+.footer__middle-col > a:hover {
+ cursor: pointer;
+ color: var(--primary-color);
+ transform: translateX(10px);
+}
+.footer__middle-col > div > a {
+    transition: transform 0.3s ease-in-out;
+}
+.footer__middle-col > div > a:hover {
+    transform: translateY(-5px);
+}
+.footer__container__bottom {
+    width: 100%;
+    height: max(200px, 20vh);
+    border-top: 1px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+   
+}
+.footer__bottom_mid {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}

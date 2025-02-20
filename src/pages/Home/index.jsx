@@ -5,8 +5,15 @@ import SlideImage from "../../components/SlideImage";
 import FeaturedCategories from "../../components/FeaturedCategories";
 import QuickView from "../../components/QuickView/index.jsx";
 import ProductItem from "../../components/productItem/index.jsx";
-import { popularProductsData, featuredCateData } from "../../Data/Data.js";
+import DealItem from "../../components/DealItem/index.jsx";
+import Footer from "../../components/Footer/index.jsx";
+import {
+  popularProductsData,
+  featuredCateData,
+  dealBannerData,
+} from "../../Data/Data.js";
 import Slider from "react-slick";
+import TopProduct from "../../components/TopProduct/index.jsx";
 const dailySaleFilter = ["sale", "hot", "new"];
 const categories = [
   "All",
@@ -21,11 +28,17 @@ const Home = () => {
   const [selectedCate, setSelectedCate] = useState("All");
   const [featuredCateList, setFeaturedCateList] = useState(featuredCateData);
   const [productList, setProductList] = useState(popularProductsData);
+  const [dealItemData, setDealItemData] = useState(dealBannerData);
   const [dailyProductList, setDailyProductList] = useState([]);
-  const [selectedDailyFilter, setSelectedDailyFilter] = useState(dailySaleFilter[0]);
+  const [topProductSellingList, setTopProductSellingList] = useState([]);
+  const [topProductTrendingList, setTopProductTrendingList] = useState([]);
+  const [topProductNewList, setTopProductNewList] = useState([]);
+  const [topProductRateList, setTopProductRateList] = useState([]);
+  const [selectedDailyFilter, setSelectedDailyFilter] = useState(
+    dailySaleFilter[0]
+  );
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isQuickviewOpen, setIsQuickviewOpen] = useState(false);
- 
 
   var dailySaleSlideSettings = {
     dots: false,
@@ -92,18 +105,33 @@ const Home = () => {
     setDailyProductList(filteredDailyData);
     //console.log(dailyProductList);
   }, [selectedDailyFilter]);
-  
-
-  
 
   const handleSelectProduct = (product) => {
     setSelectedProduct(product);
     setIsQuickviewOpen(true);
   };
-  console.log("selectedproduct", selectedProduct);
-  console.log("is quick view open", isQuickviewOpen);
-  
-  
+
+  useEffect(() => {
+    const temp = popularProductsData
+      .sort((a, b) => b.quantity_sold - a.quantity_sold)
+      .slice(0, 3);
+    const temp1 = popularProductsData
+      .filter((product) => product.tag === "hot")
+      .sort((a, b) => b.quantity_sold - a.quantity_sold)
+      .slice(0, 3);
+    const temp2 = popularProductsData
+      .filter((product) => product.tag === "new")
+      .sort((a, b) => b.id - a.id)
+      .slice(0, 3);
+    const temp3 = popularProductsData
+      .sort((a, b) => b.rate - a.rate)
+      .slice(0, 3);
+    setTopProductSellingList(temp);
+    setTopProductTrendingList(temp1);
+    setTopProductNewList(temp2);
+    setTopProductRateList(temp3);
+  }, []);
+
   return (
     <div className="home__container">
       <Header />
@@ -143,17 +171,32 @@ const Home = () => {
           <h2>Daily Best Sale</h2>
           <div className="daily-sale__heading-right">
             <div>
-              <button className={selectedDailyFilter === dailySaleFilter[0] ? "active" : ""} onClick={() => setSelectedDailyFilter(dailySaleFilter[0])}>
+              <button
+                className={
+                  selectedDailyFilter === dailySaleFilter[0] ? "active" : ""
+                }
+                onClick={() => setSelectedDailyFilter(dailySaleFilter[0])}
+              >
                 Featured
               </button>
             </div>
             <div>
-              <button className={selectedDailyFilter === dailySaleFilter[1] ? "active" : ""} onClick={() => setSelectedDailyFilter(dailySaleFilter[1])}>
+              <button
+                className={
+                  selectedDailyFilter === dailySaleFilter[1] ? "active" : ""
+                }
+                onClick={() => setSelectedDailyFilter(dailySaleFilter[1])}
+              >
                 Popular
               </button>
             </div>
             <div>
-              <button className={selectedDailyFilter === dailySaleFilter[2] ? "active" : ""} onClick={() => setSelectedDailyFilter(dailySaleFilter[2])}>
+              <button
+                className={
+                  selectedDailyFilter === dailySaleFilter[2] ? "active" : ""
+                }
+                onClick={() => setSelectedDailyFilter(dailySaleFilter[2])}
+              >
                 New Added
               </button>
             </div>
@@ -178,15 +221,56 @@ const Home = () => {
           </Slider>
         </div>
       </div>
-      <div className="quickViewProduct" >
+      <div className="dealsofDay">
+        <div className="dealofDay__heading">
+          <h2>Deals Of The Day</h2>
+          <a>All deals</a>
+        </div>
+        <div className="dealofDay__content ">
+          {dealBannerData.map((deal) => {
+            return <DealItem deal_item_data={deal} />;
+          })}
+        </div>
+      </div>
+      <div className="topProduct">
+        <div className="topProduct__col">
+          <h2>Top Selling</h2>
+          <hr />
+          <div className="topProduct__col-content">
+            <TopProduct topProductList={topProductSellingList} />
+          </div>
+        </div>
+        <div className="topProduct__col">
+          <h2>Trending Product</h2>
+          <hr />
+          <div className="topProduct__col-content">
+            <TopProduct topProductList={topProductTrendingList} />
+          </div>
+        </div>
+        <div className="topProduct__col">
+          <h2>Recently Product</h2>
+          <hr />
+          <div className="topProduct__col-content">
+            <TopProduct topProductList={topProductNewList} />
+          </div>
+        </div>
+        <div className="topProduct__col">
+          <h2>Top Rated</h2>
+          <hr />
+          <div className="topProduct__col-content">
+            <TopProduct topProductList={topProductRateList} />
+          </div>
+        </div>
+      </div>
+      <div className="quickViewProduct">
         {isQuickviewOpen && selectedProduct && (
-         
-            <QuickView 
-            onClose={()=> setIsQuickviewOpen(false)} 
-            quickview_data={selectedProduct} />
-         
+          <QuickView
+            onClose={() => setIsQuickviewOpen(false)}
+            quickview_data={selectedProduct}
+          />
         )}
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,18 +1,5 @@
 import images from "../utils/importImages";
-import cat1 from "../assets/images/cat-1.png";
-import cat2 from "../assets/images/cat-2.png";
-import cat3 from "../assets/images/cat-3.png";
-import cat4 from "../assets/images/cat-4.png";
-import cat5 from "../assets/images/cat-5.png";
-import cat9 from "../assets/images/cat-9.png";
-import cat11 from "../assets/images/cat-11.png";
-import cat12 from "../assets/images/cat-12.png";
-import cat13 from "../assets/images/cat-13.png";
-import cat14 from "../assets/images/cat-14.png";
-import cat15 from "../assets/images/cat-15.png";
-import featuredBanner1 from "../assets/images/featured-banner1.png";
-import featuredBanner2 from "../assets/images/featured-banner2.png";
-import featuredBanner3 from "../assets/images/featured-banner3.png";
+
 const featuredCateData = [
   {
     id: 1,
@@ -998,6 +985,48 @@ const popularProductsData = [
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
   },
+  
 ];
-
-export { popularProductsData, featuredCateData };
+const dealBannerData = [
+  {
+    id:1,
+    imgUrl:images["deal_banner/banner-5.png"],
+    bannerTitle:"Seeds of Change Organic Quinoa, Brown, & Red Rice",
+    rate:4,
+    vendor:"NestFood",
+    priceSaleOff:32.85,
+    price:33.0,
+    duration:30
+  },
+  {
+    id:2,
+    imgUrl:images["deal_banner/banner-6.png"],
+    bannerTitle:"Perdue Simply Smart Organics Gluten Free",
+    rate:4.5,
+    vendor:"Old El Paso",
+    priceSaleOff:24.85,
+    price:26.0,
+    duration:430
+  },
+  {
+    id:3,
+    imgUrl:images["deal_banner/banner-7.png"],
+    bannerTitle:"Signature Wood-Fired Mushroom and Caramelized",
+    rate:3.5,
+    vendor:"Progesso",
+    priceSaleOff:12.85,
+    price:13.0,
+    duration:763
+  },
+  {
+    id:4,
+    imgUrl:images["deal_banner/banner-8.png"],
+    bannerTitle:"Simply Lemonade with Raspberry Juice",
+    rate:3.0,
+    vendor:"Yoplait",
+    priceSaleOff:15.85,
+    price:16.0,
+    duration:6
+  },
+]
+export { popularProductsData, featuredCateData, dealBannerData };
