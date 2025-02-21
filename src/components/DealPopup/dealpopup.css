@@ -1,0 +1,135 @@
+@import url("../../App.css");
+
+.dealpopup__container {
+    font-family: var(--font-family);
+    position: fixed !important  ;
+    width: max(30vw,1000px);
+    height: max(20vh, 600px);
+    background-color: #fff;
+    border: var(--primary-color);
+    border-radius: 8px;
+    top: 20% !important;
+    left: 25% !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}
+
+.dealpopup__details {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.dealpopup__img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dealpopup__img > img {
+    width: 100%;
+    height: 100%;
+}
+
+.dealpopup__details-price {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+}
+.dealpopup__details-price > h2 {
+    font-size: 5.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.dealpopup__details-priceNoSale {
+    display: flex;
+    flex-direction: column;
+
+}
+.dealpopup__details-priceNoSale > h4 {
+    text-decoration: line-through;
+    font-size: 2.8rem;
+    color: #b6b6b6;
+}
+.dealpopup__details-priceNoSale > p {
+    color: #fdc040;
+    font-size: 1.2rem;
+}
+.dealpopup__details-duration {
+    width: 80%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+}
+.dealpopup__details-duration-count {
+    width: 30%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    border: 3px solid var(--primary-color);
+    padding: 16px 10px;
+}
+.dealpopup__details-duration-count > p:first-child {
+    transition: transform 0.3s ease-in-out;
+}
+.dealpopup__details-duration-count:hover > p:first-child {
+    transform: translateY(-5px);
+}
+.dealpopup__details-rate {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.4rem;
+}
+.dealpopup__details-btn {
+    width: 26%;
+    
+}
+.dealpopup__details-btn > button {
+    width: 90%;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+    padding: 12px 4px;
+    border-radius: 8px;
+    transition: width 0.3s ease-in-out;
+}
+.dealpopup__details-btn:hover > button {
+    cursor: pointer;
+    background-color: #fdc040;
+    width: 100%;
+}
+.dealpopup__turnoff {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    
+}
+
+.dealpopup__turnoff > button {
+    width: min(50px, 2vw);
+    height: min(50px, 3vh);
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+}
+.dealpopup__turnoff > button:hover {
+    cursor: pointer;
+    color: #ffc107;
+}
+
+
+

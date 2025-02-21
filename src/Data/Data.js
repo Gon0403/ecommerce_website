@@ -84,6 +84,7 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
   },
   {
     id: 2,
@@ -99,6 +100,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 3,
@@ -114,6 +117,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 4,
@@ -129,6 +134,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 5,
@@ -144,6 +151,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 6,
@@ -159,6 +168,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 7,
@@ -174,6 +185,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 8,
@@ -189,6 +202,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 9,
@@ -204,6 +219,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 10,
@@ -219,6 +236,8 @@ const popularProductsData = [
     tag: "hot",
     quantity: Math.floor(Math.random() * 101) + 50,
     quantity_sold: Math.floor(Math.random() * 51) + 1,
+    duration: 30,
+
   },
   {
     id: 11,
@@ -1028,5 +1047,6 @@ const dealBannerData = [
     price:16.0,
     duration:6
   },
-]
+];
+
 export { popularProductsData, featuredCateData, dealBannerData };

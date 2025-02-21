@@ -91,7 +91,7 @@
    border: none;
 }
 .header__container__userInfo {
-    width: 20%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,8 +113,167 @@
     opacity: 0.6;
     cursor:  pointer;
 }
+.cart__container, .user__container {
+ position: relative;
+ width: 50px;
+ height: 50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.cart-dropdown, .userInfo-dropdown {
+    position: absolute;
+    width: max(300px, 10vw);
+    height: min(40vh, 500px);
+    top: 95%;
+    left: 0%;
+    background-color: #333;
+    z-index: 9999;
+    visibility: hidden;
+    pointer-events: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+    animation: dropdown-hide 0.4s forwards;
+    background-color: #fff;
+}
+.cart-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 20px;
+}
+.cart-dropdown-list {
+    overflow-y: auto;
 
+    width: 100%;
+    height: 70%;
+}
+.cart-dropdown__item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.cart__item-img {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart__item-img > img {
+    width: 100%;
+    height: 100%;
+}
+.cart__item-details {
+    width: 60%;
+    height: 100%;
+}
+.cart__item-details >a {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-top: 10px;
+    text-decoration: none;
+}
+.cart__item-details > a:hover {
+    color: tomato;
+}
+.cart__item-details > p {
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+.cart__item-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart__item-button > button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.user__container:hover .userInfo-dropdown,
+.cart__container:hover .cart-dropdown {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    animation: dropdown-show 0.4s forwards;
+}
+.cart-dropdown-bottom {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.cart-dropdown-bottom-total, .cart-dropdown-bottom-btn {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    gap: 100px;
+    justify-content: space-around;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.cart-dropdown-bottom-btn {
+    width: 100%;
+    height: 70%;
+}
+.cart-dropdown-bottom-btn > a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    padding: 6px;
+    border-radius: 8px;
 
+}
+.cart-dropdown-bottom-btn > a:first-child {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.cart-dropdown-bottom-btn > a:last-child {
+    background-color: var(--primary-color);
+}
+.cart-dropdown-bottom-btn > a:hover {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.userInfo-dropdown {
+    width: max(200px, 10vw);
+    height: max(260px, 20vh);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.userInfo-dropdown-item {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.userInfo-dropdown-item:hover > .userInfo-dropdown-link,    
+.userInfo-dropdown-item:hover > .userInfo-dropdown-ic {
+    color: var(--primary-color);
+}
+.userInfo-dropdown-ic {
+    font-size: 2rem;
+}
+.userInfo-dropdown-link {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #333;
+}
 .header__container__sub {
     display: flex;
     justify-content: space-around;
@@ -258,6 +417,7 @@
     font-family: "Quicksand", serif ;
     font-weight: bold;
     position: relative;
+    color: #333;
 }
 .header__shop__dropdown__container {
     border-radius: 8px;
@@ -430,6 +590,9 @@
     width: 10%;
 }
 
+.icon {
+    font-size: 2rem;
+}
 
 .icon_category {
     font-size: 20px;
@@ -445,7 +608,15 @@ hr {
 .header__details-icon {
     font-size: 1.2rem;
 }
-
+.header__container__sub__support {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.header__container__sub__support-icon {
+    width: 100%;
+    font-size: 3rem;
+}
 
 
 

@@ -14,6 +14,7 @@ import {
 } from "../../Data/Data.js";
 import Slider from "react-slick";
 import TopProduct from "../../components/TopProduct/index.jsx";
+import DealPopup from "../../components/DealPopup/index.jsx";
 const dailySaleFilter = ["sale", "hot", "new"];
 const categories = [
   "All",
@@ -25,6 +26,7 @@ const categories = [
   "Fresh Fruits",
 ];
 const Home = () => {
+  const [isLogined, setIsLogined] = useState(true);
   const [selectedCate, setSelectedCate] = useState("All");
   const [featuredCateList, setFeaturedCateList] = useState(featuredCateData);
   const [productList, setProductList] = useState(popularProductsData);
@@ -39,7 +41,8 @@ const Home = () => {
   );
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isQuickviewOpen, setIsQuickviewOpen] = useState(false);
-
+  const [isDealPopupOpen, setIsDealPopupOpen] = useState(false);
+  const [dealPopupData, setDealPopupData] = useState({});
   var dailySaleSlideSettings = {
     dots: false,
     infinite: true,
@@ -112,29 +115,36 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const temp = popularProductsData
+    const temp = [...popularProductsData]
       .sort((a, b) => b.quantity_sold - a.quantity_sold)
       .slice(0, 3);
-    const temp1 = popularProductsData
+    const temp1 = [...popularProductsData]
       .filter((product) => product.tag === "hot")
       .sort((a, b) => b.quantity_sold - a.quantity_sold)
       .slice(0, 3);
-    const temp2 = popularProductsData
+    const temp2 = [...popularProductsData]
       .filter((product) => product.tag === "new")
       .sort((a, b) => b.id - a.id)
       .slice(0, 3);
-    const temp3 = popularProductsData
+    const temp3 = [...popularProductsData]
       .sort((a, b) => b.rate - a.rate)
       .slice(0, 3);
+
     setTopProductSellingList(temp);
     setTopProductTrendingList(temp1);
     setTopProductNewList(temp2);
     setTopProductRateList(temp3);
   }, []);
 
+  useEffect(() => {
+    setDealPopupData(popularProductsData[0]);
+    setIsDealPopupOpen(true);
+  }, []);
+  
+
   return (
     <div className="home__container">
-      <Header />
+      <Header isLogined={isLogined} />
       <SlideImage />
       <FeaturedCategories featuredCate={featuredCateList} />
       <div className="popular__container">
@@ -267,6 +277,14 @@ const Home = () => {
           <QuickView
             onClose={() => setIsQuickviewOpen(false)}
             quickview_data={selectedProduct}
+          />
+        )}
+      </div>
+      <div className="deal__popup">
+        {isDealPopupOpen && dealPopupData && (
+          <DealPopup
+            product={dealPopupData}
+            onClose={() => setIsDealPopupOpen(false)}
           />
         )}
       </div>
